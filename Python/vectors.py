@@ -49,16 +49,6 @@ class Vec2D(ibject):
 		result.y = self.y + (per * (other.y - self.y))
 		return result
 		
-	def angle(self, other):
-		opp = self.magnitude()
-		base = other.magnitude()
-		hyp = sqrt((base * base) + (opp * opp))
-		tri = Vec3D(base, opp, hyp)
-		tri = tri.normalize()
-		angle = acos(base / hyp)
-		result = (angle / 3.14) * 180
-		return result
-		
 class Vec3D(object):
 	def __init__(self, nX, nY, nZ):
 		self.x = nX
