@@ -29,3 +29,7 @@ result = c.normalize()
 result.info()
 print " "
 
+print "dot product"
+print(a * b)
+print " "
+
