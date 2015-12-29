@@ -123,3 +123,37 @@ class Vec3D(object):
 		result = (angle / 3.14) * 180
 		return result
 		
+class Vec4D(object):
+	def __init__(self, nX, nY, nZ, nA):
+		self.x = nX
+		self.y = nY
+		self.z = nZ
+		self.a = nA
+		
+	def info(self):
+		print self.x, ",", self.y, ",", self.z, ",", self.a
+		
+	def normalize(self):
+		result = Vec4D(0,0,0,0)
+		if (self.x >= self.y and self.x >= self.z and self.x >= self.a):
+			div = self.x
+		elif (self.y >= self.x and self.y >= self.z and self.y >= self.a):
+			div = self.y
+		elif (self.z >= self.x and self.z >= self.y and self.z >= self.a):
+			div = self.z
+		else:
+			div = self.a
+		result.x = self.x / div
+		result.y = self.y / div
+		result.z = self.z / div
+		result.a = self.a / div
+		return result
+		
+	def hexadecimal(self):
+		result = Vec4D(0,0,0,0)
+		result.x = int(self.x[:2],16)
+		result.y = int(self.y[2:4],16)
+		result.z = int(self.z[4:6],16)
+		result.a = int(self.a[6:],16)
+		return result
+		
