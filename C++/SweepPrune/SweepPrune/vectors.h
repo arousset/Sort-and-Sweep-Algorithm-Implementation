@@ -251,3 +251,65 @@ public:
 		}
 	}
 };
+
+class Node {
+public:
+	Vector<float> value;
+	bool minMax;
+	char belong;
+	Node *next;
+	Node *pre;
+
+	Node(Vector<float> val, bool mm, char be)
+	{
+		value = val;
+		minMax = mm;
+		belong = be;
+		Node *next;
+		Node *pre;
+	}
+
+	void read(Node &start)
+	{
+		Node *current = &start;
+		for (int i = 0; i < 50; i++)
+		{
+			if (current->next == NULL)
+			{
+				current->value.Print();
+				break;
+			}
+
+			else
+			{
+				current->value.Print();
+				*current = *current->next;
+			}
+		}
+	}
+
+	void SetNext(Node &ne)
+	{
+		next = &ne;
+		ne.pre = this;
+	}
+
+	void SetPre(Node &ne)
+	{
+		pre = &ne;
+	}
+
+	void Insert(Node &a, Node &b)
+	{
+		this->next = &b;
+		this->pre = &a;
+
+		a.next = this;
+		b.pre = this;
+	}
+
+	void Remove(Node &a)
+	{
+
+	}
+};
