@@ -157,3 +157,6 @@ class Vec4D(object):
 		result.a = int(self.a[6:],16)
 		return result
 		
+def toRadians(object):
+	return (object / 180) * 3.14
+	
