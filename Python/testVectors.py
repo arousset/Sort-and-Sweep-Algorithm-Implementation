@@ -24,3 +24,8 @@ print "magnitude:"
 c.magnitude()
 print " "
 
+print "normalize:"
+result = c.normalize()
+result.info()
+print " "
+
