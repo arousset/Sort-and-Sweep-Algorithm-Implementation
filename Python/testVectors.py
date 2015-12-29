@@ -29,7 +29,12 @@ result = c.normalize()
 result.info()
 print " "
 
-print "dot product"
+print "dot product:"
 print(a * b)
+print " "
+
+print "linear interpolation:"
+result = a.lerp(b,.5)
+result.info()
 print " "
 
