@@ -160,3 +160,5 @@ class Vec4D(object):
 def toRadians(object):
 	return (object / 180) * 3.14
 	
+def toDegrees(object):
+	return (object / 3.14) * 180
