@@ -164,4 +164,36 @@ public:
 
 		return hex;
 	}
+
+	bool SquareCollision(Vector first, Vector other)
+	{
+		Vector<float> max1 = first;
+		Vector<float> max2 = other;
+
+		Vector<float> min1 = { max1.x + 50, max1.y + 50 };
+		Vector<float> min2 = { max2.x + 50, max2.y + 50 };
+
+		if (max1.x <= min2.x && max2.x <= min1.x && max1.y <= min2.y && max2.y <= min1.y)
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+
+	bool CircleCollision(Vector c1, Vector c2)
+	{
+		if (sqrt((c1 - c2) * (c1 - c2)) <= c1.z + c2.z)
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
 };
