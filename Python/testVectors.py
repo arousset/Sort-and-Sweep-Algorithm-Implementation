@@ -19,3 +19,8 @@ print "subtraction:"
 c.info()
 print " "
 
+c = a + b
+print "magnitude:"
+c.magnitude()
+print " "
+
