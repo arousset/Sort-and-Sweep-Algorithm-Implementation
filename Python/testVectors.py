@@ -14,3 +14,8 @@ print "addition:"
 c.info()
 print " "
 
+c = a - b
+print "subtraction:"
+c.info()
+print " "
+
