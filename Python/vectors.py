@@ -1,7 +1,7 @@
 import math
 from math import *
 
-class Vec2D(ibject):
+class Vec2D(object):
 	def __init__(self, nX, nY):
 		self.x = nX
 		self.y = nY
