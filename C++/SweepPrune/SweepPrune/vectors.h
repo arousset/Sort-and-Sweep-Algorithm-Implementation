@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <cstring>
+#include <string>
 #include <cmath>
 using namespace std;
 
@@ -81,12 +81,10 @@ public:
 		{
 			div = x;
 		}
-
 		else if (y >= x && y >= z)
 		{
 			div = y;
 		}
-
 		else
 		{
 			div = z;
@@ -94,7 +92,6 @@ public:
 		double newx = x / div;
 		double newy = y / div;
 		double newz = z / div;
-
 		Vector temp(newx, newy, newz);
 		return temp;
 	}
@@ -106,7 +103,6 @@ public:
 		temp.y = y * other.y;
 		temp.z = z * other.z;
 		double dot = temp.x + temp.y + temp.z;
-
 		return dot;
 	}
 
@@ -116,7 +112,6 @@ public:
 		crossx = (y * other.z) - (other.y * z);
 		crossy = (z * other.x) - (other.z * x);
 		crossz = (x * other.y) - (other.x * y);
-
 		Vector cross(crossx, crossy, crossz);
 		return cross;
 	}
@@ -127,14 +122,10 @@ public:
 		opp = this->Magnitude();
 		base = b.Magnitude();
 		hyp = sqrt((base * base) + (opp * opp));
-
 		Vector tri(base, opp, hyp);
 		tri = tri.Nomalize();
-
 		double angle = acos(base / hyp);
-
 		angle = (angle / 3.14) * 180;
-
 		return angle;
 	}
 
@@ -160,7 +151,6 @@ public:
 		unsigned int Hexblue = (HexColor >> 8) & 0x0000FF;
 		unsigned int Hexalpha = HexColor & 0x000000FF;
 		Vector<int> hex(Hexred, Hexgreen, Hexblue, Hexalpha);
-
 		return hex;
 	}
 
@@ -168,15 +158,12 @@ public:
 	{
 		Vector<float> max1 = first;
 		Vector<float> max2 = other;
-
 		Vector<float> min1 = { max1.x + 50, max1.y + 50 };
 		Vector<float> min2 = { max2.x + 50, max2.y + 50 };
-
 		if (max1.x <= min2.x && max2.x <= min1.x && max1.y <= min2.y && max2.y <= min1.y)
 		{
 			return true;
 		}
-
 		else
 		{
 			return false;
@@ -189,7 +176,6 @@ public:
 		{
 			return true;
 		}
-
 		else
 		{
 			return false;
@@ -221,11 +207,11 @@ class Node {
 public:
 	Vector<float> value;
 	bool minMax;
-	char belong;
+	int belong;
 	Node *next;
 	Node *pre;
 
-	Node(Vector<float> val, bool mm, char be)
+	Node(Vector<float> val, bool mm, int be)
 	{
 		value = val;
 		minMax = mm;
@@ -241,14 +227,13 @@ public:
 		{
 			if (current->next == NULL)
 			{
-				current->value.Print();
+				cout << belong << endl;
 				break;
 			}
-
 			else
 			{
-				current->value.Print();
-				*current = *current->next;
+				cout << belong << endl;
+				break;
 			}
 		}
 	}
@@ -264,17 +249,73 @@ public:
 		pre = &ne;
 	}
 
-	void Insert(Node &a, Node &b)
+	void Insert(Node *a, Node *b)
 	{
 		this->next = &b;
 		this->pre = &a;
-
-		a.next = this;
-		b.pre = this;
+		a->next = this;
+		b->pre = this;
 	}
 
 	void Remove()
 	{
-
+		if (this->next == NULL)
+		{
+			this->pre->next = NULL;
+		}
+		else
+		{
+			this->pre->next = this->next;
+		}
+		if (this->pre->next != NULL)
+		{
+			if (this->pre == NULL)
+			{
+				this->next->pre = NULL;
+			}
+			else
+			{
+				this->next->pre = this->pre;
+			}
+		}
+		this->next = NULL;
+		this->pre = NULL;
 	}
+
+	bool Compare(Node &node)
+	{
+		if (node.value.x > this->value.x)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	bool sortCompare(Node &start)
+	{
+		Node *current = &start;
+		for (int i = 0; i < 50; i++)
+		{
+			if (current->next != NULL)
+			{
+				Node *compare = current->next;
+				if (current->Compare(*compare) = false)
+				{
+					return false;
+				}
+				Node *change = current->next;
+				current = change;
+			}
+			return true;
+		}
+	}
+
+	//Vector<float> compareName(Node *current, int num)
+	//{
+	//	Vector<float> result = { num.current->belong };
+	//	return result;
+	//}
 };
