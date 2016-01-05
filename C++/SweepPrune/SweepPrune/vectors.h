@@ -71,7 +71,6 @@ public:
 		int tempy = y * y;
 		int tempz = z * z;
 		double sr = sqrt(tempx + tempy + tempz);
-
 		return sr;
 	}
 
@@ -207,9 +206,6 @@ public:
 	Vector<float> Pos;
 	char name;
 
-	Rect *pre;
-	Rect *next;
-
 	Rect(int h, int w, Vector<float> pos, char na)
 	{
 		height = h;
@@ -218,37 +214,6 @@ public:
 		min = pos;
 		max = { Pos.x + w, Pos.y + h };
 		name = na;
-	}
-
-	void SetNext(Rect &ne)
-	{
-		next = &ne;
-		ne.pre = this;
-	}
-
-	void SetPre(Rect &ne)
-	{
-		pre = &ne;
-	}
-
-	void Read(Rect &start)
-	{
-		Rect *current = &start;
-		for (int i = 0; i < 50; i++)
-		{
-			if (current == NULL)
-			{
-				cout << current->name << endl;
-				break;
-			}
-
-			else
-			{
-				cout << current->name << endl;
-				current = current->next;
-			}
-
-		}
 	}
 };
 
@@ -308,7 +273,7 @@ public:
 		b.pre = this;
 	}
 
-	void Remove(Node &a)
+	void Remove()
 	{
 
 	}
