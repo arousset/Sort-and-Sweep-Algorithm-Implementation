@@ -1,5 +1,5 @@
 #include "vectors.h"
-
+//error
 int main()
 {
 	Rect rec1(25, 100, { 50, 50 }, 'a');
