@@ -1,7 +1,7 @@
-using namespace std;
 #include <iostream>
 #include <string>
 #include <cmath>
+using namespace std;
 
 template<typename T>
 class Vector 
