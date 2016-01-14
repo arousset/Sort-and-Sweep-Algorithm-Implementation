@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\brock barlow\documents\github\sort-and-sweep-algorithm-implementation\c++\sweepprune\sweepprune\vectors.h(210): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\brock barlow\documents\github\sort-and-sweep-algorithm-implementation\c++\sweepprune\sweepprune\vectors.h(211): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\brock barlow\documents\github\sort-and-sweep-algorithm-implementation\c++\sweepprune\sweepprune\vectors.h(234): warning C4101: 'pre': unreferenced local variable
+c:\users\brock barlow\documents\github\sort-and-sweep-algorithm-implementation\c++\sweepprune\sweepprune\vectors.h(233): warning C4101: 'next': unreferenced local variable
+  SweepPrune.vcxproj -> C:\Users\Brock Barlow\Documents\GitHub\Sort-and-Sweep-Algorithm-Implementation\C++\SweepPrune\Debug\SweepPrune.exe
+  SweepPrune.vcxproj -> C:\Users\Brock Barlow\Documents\GitHub\Sort-and-Sweep-Algorithm-Implementation\C++\SweepPrune\Debug\SweepPrune.pdb (Partial PDB)

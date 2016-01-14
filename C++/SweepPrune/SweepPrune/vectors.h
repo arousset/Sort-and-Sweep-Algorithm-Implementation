@@ -1,16 +1,15 @@
+using namespace std;
 #include <iostream>
 #include <string>
 #include <cmath>
-using namespace std;
 
-template<typename T>
-class Vector 
-{
+template<typename V>
+class Vector {
 public:
-	T x = 0;
-	T y = 0;
-	T z = 0;
-	T alpha = 0;
+	V x = 0;
+	V y = 0;
+	V z = 0;
+	V alpha = 0;
 
 	void Print()
 	{
@@ -25,20 +24,20 @@ public:
 		alpha = 0;
 	}
 
-	Vector(T a, T b)
+	Vector(V a, V b)
 	{
 		x = a;
 		y = b;
 	}
 
-	Vector(T a, T b, T c)
+	Vector(V a, V b, V c)
 	{
 		x = a;
 		y = b;
 		z = c;
 	}
 
-	Vector(T a, T b, T c, T d)
+	Vector(V a, V b, V c, V d)
 	{
 		x = a;
 		y = b;
@@ -197,8 +196,7 @@ public:
 	}
 };
 
-class Rect 
-{
+class Rect {
 public:
 	float height;
 	float width;
@@ -218,8 +216,7 @@ public:
 	}
 };
 
-class Node 
-{
+class Node {
 public:
 
 	Vector<float> value;
@@ -244,13 +241,13 @@ public:
 		{
 			if (current->next == NULL)
 			{
-				cout << belong << endl;
+				cout << belong << " " << minMax << endl;
 				break;
 			}
 
 			else
 			{
-				cout << belong << endl;
+				cout << belong << " " << minMax << endl;
 				*current = *current->next;
 			}
 		}
